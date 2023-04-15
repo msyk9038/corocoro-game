@@ -29,12 +29,15 @@ basic.forever(function () {
     敵.change(LedSpriteProperty.Y, randint(-1, 1))
     basic.pause(1000)
     if (プレイヤー.isTouching(ゴール)) {
+        basic.clearScreen()
         basic.showString("GOAL")
-        basic.showIcon(IconNames.Happy)
+        for (let index = 0; index < 4; index++) {
+            basic.showIcon(IconNames.Happy)
+            basic.pause(500)
+        }
         control.reset()
     }
     if (プレイヤー.isTouching(敵)) {
-        basic.showIcon(IconNames.Skull)
-        control.reset()
+        game.gameOver()
     }
 })
