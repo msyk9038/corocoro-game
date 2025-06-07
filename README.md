@@ -1,31 +1,68 @@
+# コロコロゲーム - micro:bit プロジェクト
 
-> このページを開く [https://msyk9038.github.io/corocoro-game/](https://msyk9038.github.io/corocoro-game/)
+このプロジェクトは、BBC micro:bitを使用した「コロコロゲーム」を実装したものです。
 
-## 拡張機能として使用
+## 概要
 
-このリポジトリは、MakeCode で **拡張機能** として追加できます。
+micro:bitの加速度センサーを活用し、デバイスを傾けることでLEDディスプレイ上のボール（光点）を操作するゲームです。迷路や障害物を避けながらゴールを目指します。
 
-* [https://makecode.microbit.org/](https://makecode.microbit.org/) を開く
-* **新しいプロジェクト** をクリックしてください
-* ギアボタンメニューの中にある **拡張機能** をクリックしてください
-* **https://github.com/msyk9038/corocoro-game** を検索してインポートします。
+## 機能
 
-## このプロジェクトを編集します ![ビルド ステータス バッジ](https://github.com/msyk9038/corocoro-game/workflows/MakeCode/badge.svg)
+- 加速度センサーによるボール（光点）の操作
+- 複数のゲームレベル
+- スコア記録
+- ゲームオーバーとクリア判定
+- 効果音
 
-MakeCode でこのリポジトリを編集します。
+## 使用方法
 
-* [https://makecode.microbit.org/](https://makecode.microbit.org/) を開く
-* **読み込む** をクリックし、 **URLから読み込む...** をクリックしてください
-* **https://github.com/msyk9038/corocoro-game** を貼り付けてインポートをクリックしてください
+1. [MakeCode エディタ](https://makecode.microbit.org/)を開く
+2. 「読み込む」をクリックし、このリポジトリからダウンロードした .hex ファイルを選択
+3. または、「インポート」→「URLから読み込む」を選択し、このリポジトリのURLを入力
+4. micro:bitにダウンロードして使用
+5. デバイスを傾けてボールを操作し、障害物を避けながらゴールを目指します
 
-## ブロックのプレビュー
+## 操作方法
 
-この画像はマスター内の最後のコミットからのブロックコードを示しています。
-このイメージは更新に数分かかる場合があります。
+- micro:bitを傾けると、その方向にボールが転がります
+- Aボタン: ゲームスタート/リスタート
+- Bボタン: レベル選択
+- A+Bボタン同時押し: ハイスコア表示
 
-![生成されたブロック](https://github.com/msyk9038/corocoro-game/raw/master/.github/makecode/blocks.png)
+## ゲームルール
 
-#### メタデータ (検索、レンダリングに使用)
+1. スタート地点からゴールまでボールを誘導します
+2. 壁や障害物に当たるとライフが減ります
+3. ライフがゼロになるとゲームオーバーです
+4. 制限時間内にゴールするとボーナスポイントが加算されます
+5. 各レベルをクリアすると次のレベルに進みます
 
-* for PXT/microbit
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+## レベル構成
+
+- レベル1: 基本的な迷路
+- レベル2: 動く障害物が追加
+- レベル3: 複雑な迷路と時間制限
+- レベル4: 特殊ギミック（テレポートなど）
+- レベル5: ボスステージ
+
+## カスタマイズ
+
+コード内の以下の部分を編集することで、ゲームをカスタマイズできます：
+
+- `levels` 配列: 各レベルのマップデザイン
+- `speed` 変数: ボールの移動速度
+- `sensitivity` 変数: 傾きの感度
+
+## 拡張アイデア
+
+- 複数のmicro:bitを接続した協力プレイモード
+- 外部LEDや音響デバイスとの連携
+- カスタムレベルエディタの作成
+
+## ライセンス
+
+MIT
+
+## 作者
+
+msyk9038
